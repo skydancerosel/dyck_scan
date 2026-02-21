@@ -1,8 +1,10 @@
 # Early-Warning Signals of Grokking: SCAN and Dyck Experiments
 
+We show that loss-landscape curvature, measured via the **commutator defect** of successive gradient updates, provides a reliable early-warning signal for grokking. The defect rises systematically before generalization onset, with lead times following a superlinear power law across three task families and over two orders of magnitude in learning rate.
+
 **Paper**: [Early-Warning Signals of Grokking via Loss-Landscape Geometry](https://arxiv.org/abs/2602.16967)
 
-Code and figures for studying the **commutator defect** as an early-warning signal for grokking on two sequence-learning tasks:
+Code and figures for studying the commutator defect as an early-warning signal on two sequence-learning tasks:
 
 - **SCAN** compositional generalization (encoder-decoder transformer, ~1.5M params)
 - **Dyck-1** depth prediction (causal decoder transformer, ~150k params)
