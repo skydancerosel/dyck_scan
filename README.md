@@ -1,5 +1,7 @@
 # Early-Warning Signals of Grokking: SCAN and Dyck Experiments
 
+**Paper**: [Early-Warning Signals of Grokking via Loss-Landscape Geometry](https://arxiv.org/abs/2602.16967)
+
 Code and figures for studying the **commutator defect** as an early-warning signal for grokking on two sequence-learning tasks:
 
 - **SCAN** compositional generalization (encoder-decoder transformer, ~1.5M params)
@@ -88,10 +90,13 @@ python dyck_intervention.py
 If you use this code, please cite:
 
 ```bibtex
-@article{xu2026grokking,
-  title={Early-Warning Signals of Grokking in Neural Networks},
+@article{xu2026earlywarning,
+  title={Early-Warning Signals of Grokking via Loss-Landscape Geometry},
   author={Xu, Yongzhong},
-  year={2026}
+  year={2026},
+  eprint={2602.16967},
+  archivePrefix={arXiv},
+  url={https://arxiv.org/abs/2602.16967}
 }
 ```
 
