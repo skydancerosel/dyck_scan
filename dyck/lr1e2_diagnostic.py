@@ -13,7 +13,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-OUT_DIR = Path(__file__).parent / "dyck_pca_plots"
+OUT_DIR = Path(__file__).parent / "figures"
 ACC_KEY = "test_acc"
 
 # Load data

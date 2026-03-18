@@ -33,7 +33,7 @@ from scan_commutator_analysis import commutator_defect
 from scan_generalization_dynamics import find_spike_step
 
 # -- config -------------------------------------------------------------------
-OUT_DIR = Path(__file__).parent / "scan_pca_plots"
+OUT_DIR = Path(__file__).parent / "figures"
 LRS = [1e-5, 5e-5, 1e-4]
 SEEDS = [42]
 WDS = [1.0, 0.0]

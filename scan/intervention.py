@@ -54,7 +54,7 @@ from scan_pca_analysis import collect_trajectory, pca_on_trajectory
 from scan_generalization_dynamics import find_spike_step
 
 # -- config -------------------------------------------------------------------
-OUT_DIR = Path(__file__).parent / "scan_pca_plots"
+OUT_DIR = Path(__file__).parent / "figures"
 SEEDS = [42, 137, 2024]
 
 COMM_EVERY = 100

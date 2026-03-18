@@ -28,7 +28,7 @@ from scan_generalization_dynamics import find_spike_step
 from scan_grok_sweep import extract_attn_matrices
 
 # -- config -------------------------------------------------------------------
-OUT_DIR = Path(__file__).parent / "scan_pca_plots"
+OUT_DIR = Path(__file__).parent / "figures"
 OUT_DIR.mkdir(exist_ok=True)
 
 SEED = 42  # primary seed for scaling analysis
@@ -138,7 +138,7 @@ def load_all_data():
         print(f"  Loaded lr_sweep data: {len(all_data)} runs")
 
     # 2. Load weight snapshots from scan_sweep_results/ (lr=1e-4 only)
-    sweep_dir = Path(__file__).parent / "scan_sweep_results"
+    sweep_dir = Path(__file__).parent / "../scan_sweep_results"
     for seed in [42, 137, 2024]:
         fpath = sweep_dir / f"scan_wd1.0_s{seed}.pt"
         if fpath.exists():

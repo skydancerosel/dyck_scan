@@ -27,7 +27,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from dyck_generalization_dynamics import find_spike_step
 
 # -- config -------------------------------------------------------------------
-OUT_DIR = Path(__file__).parent / "dyck_pca_plots"
+OUT_DIR = Path(__file__).parent / "figures"
 OUT_DIR.mkdir(exist_ok=True)
 
 SEED = 42
@@ -138,7 +138,7 @@ def load_all_data():
         print(f"  Loaded lr_sweep data: {len(all_data)} runs")
 
     # 2. Load weight snapshots from dyck_sweep_results/
-    sweep_dir = Path(__file__).parent / "dyck_sweep_results"
+    sweep_dir = Path(__file__).parent / "../dyck_sweep_results"
     for seed in [42, 137, 2024]:
         fpath = sweep_dir / f"dyck_wd1.0_s{seed}.pt"
         if fpath.exists():

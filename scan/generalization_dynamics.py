@@ -36,7 +36,7 @@ from scan_grok_sweep import (
 from scan_commutator_analysis import commutator_defect
 
 # -- config -------------------------------------------------------------------
-OUT_DIR = Path(__file__).parent / "scan_pca_plots"
+OUT_DIR = Path(__file__).parent / "figures"
 SEEDS = [42, 137, 2024]
 
 COMM_EVERY = 100

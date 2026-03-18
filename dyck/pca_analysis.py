@@ -24,8 +24,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 # ── config ──────────────────────────────────────────────────────────────
-SWEEP_DIR = Path(__file__).parent / "dyck_sweep_results"
-OUT_DIR = Path(__file__).parent / "dyck_pca_plots"
+SWEEP_DIR = Path(__file__).parent / "../dyck_sweep_results"
+OUT_DIR = Path(__file__).parent / "figures"
 TOP_K = 10
 ATTN_KEYS = ["WQ", "WK", "WV", "WO"]
 MLP_KEYS  = ["W_up", "W_down"]

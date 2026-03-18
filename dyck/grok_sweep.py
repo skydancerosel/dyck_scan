@@ -228,7 +228,7 @@ class DyckSweepConfig:
     EVAL_BATCHES_OOD: int = 10
 
 
-OUT_DIR = Path(__file__).parent / "dyck_sweep_results"
+OUT_DIR = Path(__file__).parent / "../dyck_sweep_results"
 
 
 # ═══════════════════════════════════════════════════════════════════════════

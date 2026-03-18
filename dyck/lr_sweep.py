@@ -32,7 +32,7 @@ from dyck_commutator_analysis import commutator_defect
 from dyck_generalization_dynamics import find_spike_step
 
 # ── config ───────────────────────────────────────────────────────────────
-OUT_DIR = Path(__file__).parent / "dyck_pca_plots"
+OUT_DIR = Path(__file__).parent / "figures"
 LRS = [1e-4, 5e-4, 1e-3, 3e-3, 1e-2]
 SEEDS = [42, 137, 2024]
 WDS = [1.0, 0.0]

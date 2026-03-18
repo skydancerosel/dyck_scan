@@ -49,7 +49,7 @@ from scan_grok_sweep import (
 from scan_pca_analysis import pca_on_trajectory, collect_trajectory
 
 # -- config -------------------------------------------------------------------
-OUT_DIR = Path(__file__).parent / "scan_pca_plots"
+OUT_DIR = Path(__file__).parent / "figures"
 SEEDS = [42, 137, 2024]
 CHECKPOINT_EVERY = 200
 COMM_K = 9

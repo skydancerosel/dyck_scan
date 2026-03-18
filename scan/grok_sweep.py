@@ -39,7 +39,7 @@ import torch.nn.functional as F
 # SCAN data download and parsing
 # ═══════════════════════════════════════════════════════════════════════════
 
-SCAN_DATA_DIR = Path(__file__).parent / "scan_data"
+SCAN_DATA_DIR = Path(__file__).parent / "../scan_data"
 SCAN_URLS = {
     "train": "https://raw.githubusercontent.com/brendenlake/SCAN/master/simple_split/tasks_train_simple.txt",
     "test": "https://raw.githubusercontent.com/brendenlake/SCAN/master/simple_split/tasks_test_simple.txt",
@@ -312,7 +312,7 @@ class ScanSweepConfig:
     EVAL_BS: int = 256
 
 
-OUT_DIR = Path(__file__).parent / "scan_sweep_results"
+OUT_DIR = Path(__file__).parent / "../scan_sweep_results"
 
 
 # ═══════════════════════════════════════════════════════════════════════════

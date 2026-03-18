@@ -53,7 +53,7 @@ from dyck_commutator_analysis import (
 from dyck_generalization_dynamics import find_spike_step, find_grok_step_from_records
 
 # -- config -------------------------------------------------------------------
-OUT_DIR = Path(__file__).parent / "dyck_pca_plots"
+OUT_DIR = Path(__file__).parent / "figures"
 SEEDS = [42, 137, 2024]
 
 COMM_EVERY = 100

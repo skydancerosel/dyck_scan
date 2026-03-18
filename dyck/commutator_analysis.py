@@ -49,7 +49,7 @@ from dyck_grok_sweep import (
 from dyck_pca_analysis import pca_on_trajectory, collect_trajectory
 
 # -- config -------------------------------------------------------------------
-OUT_DIR = Path(__file__).parent / "dyck_pca_plots"
+OUT_DIR = Path(__file__).parent / "figures"
 ATTN_KEYS = ["WQ", "WK", "WV", "WO"]
 MLP_KEYS  = ["W_up", "W_down"]
 WEIGHT_KEYS = ATTN_KEYS + MLP_KEYS

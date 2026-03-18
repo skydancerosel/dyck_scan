@@ -35,7 +35,7 @@ from dyck_grok_sweep import (
 from dyck_commutator_analysis import commutator_defect
 
 # ── config ───────────────────────────────────────────────────────────────
-OUT_DIR = Path(__file__).parent / "dyck_pca_plots"
+OUT_DIR = Path(__file__).parent / "figures"
 SEEDS = [42, 137, 2024]
 
 COMM_EVERY = 100

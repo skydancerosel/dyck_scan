@@ -28,7 +28,7 @@ import torch.nn.functional as F
 # 1) SCAN data download and parsing (from scan_grok_sweep.py)
 # ═══════════════════════════════════════════════════════════════════════════
 
-SCAN_DATA_DIR = Path(__file__).parent / "scan_data"
+SCAN_DATA_DIR = Path(__file__).parent / "../scan_data"
 SCAN_URLS = {
     "train": "https://raw.githubusercontent.com/brendenlake/SCAN/master/simple_split/tasks_train_simple.txt",
     "test": "https://raw.githubusercontent.com/brendenlake/SCAN/master/simple_split/tasks_test_simple.txt",

@@ -24,8 +24,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 # ── config ──────────────────────────────────────────────────────────────
-SWEEP_DIR = Path(__file__).parent / "scan_sweep_results"
-OUT_DIR = Path(__file__).parent / "scan_pca_plots"
+SWEEP_DIR = Path(__file__).parent / "../scan_sweep_results"
+OUT_DIR = Path(__file__).parent / "figures"
 TOP_K = 10
 
 # Weight keys differ for encoder vs decoder in seq2seq
