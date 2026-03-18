@@ -1,0 +1,31 @@
+# Data / checkpoints (too large for git)
+*.pt
+dyck_sweep_results/
+scan_sweep_results/
+
+# LaTeX / paper (lives on arXiv, not in repo)
+*.aux
+*.log
+*.out
+*.tex
+*.pdf
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+
+# arXiv submission artifacts
+arxiv_submission/
+arxiv_submission.zip
+
+# OS / IDE
+.DS_Store
+.claude/
+
+# Working notes
+*_TODO.md
+issues_rerun.md
+
+# Debug / one-off scripts
+debug_*.py
+rerun_*.py
