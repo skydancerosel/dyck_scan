@@ -68,6 +68,9 @@ dyck/                           # Dyck experiments
   spectral_geometry.py            # Spectral geometry of attention weights
   figures/                        # All Dyck figures
 
+spectral/                       # Spectral edge thesis replication
+  thesis_table7_replication.py    # Gram matrix spectral analysis (g₂₃, R, k*)
+
 grok_pc1_lr_experiment.py       # Cross-task joint PC1 analysis
 scan_data/                      # SCAN train/test splits
 SPECTRAL_GEOMETRY_RESULTS.md    # Detailed spectral geometry results
@@ -103,6 +106,11 @@ Run spectral geometry analysis:
 ```bash
 python scan/spectral_geometry.py
 python dyck/spectral_geometry.py
+```
+
+Run Gram matrix spectral analysis (spectral edge thesis replication):
+```bash
+MAX_FILE_MB=2500 python3 -u spectral/thesis_table7_replication.py
 ```
 
 ## Citation
