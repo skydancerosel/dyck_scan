@@ -36,11 +36,10 @@ spectral/fourier_scan_plots/
 spectral/coherence_edge_plots/
 spectral/coherence_edge_results/
 
+# Paper source (lives on arXiv)
+paper/
+
 # arXiv submission tarballs (regenerable)
-paper/arxiv_submission/
-paper/arxiv_submission.tar.gz
-paper/arxiv_submission.zip
-paper/main.pdf
 arxiv_submission/
 arxiv_submission*.zip
 arxiv_submission*.tar.gz

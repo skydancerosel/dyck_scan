@@ -13,7 +13,7 @@ This directory contains the analysis scripts for two papers:
 
 Computes the three Gram matrix diagnostics (`g_{23}`, gap ratio `R`, weighted `k*`) from rolling-window parameter updates for Dyck-1 and SCAN checkpoints in `dyck_sweep_results/` and `scan_sweep_results/`.
 
-See `../SPECTRAL_EDGE_THESIS_REPLICATION.md` for results.
+See §12 of `../SPECTRAL_GEOMETRY_RESULTS.md` for results.
 
 ---
 

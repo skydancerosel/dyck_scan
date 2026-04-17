@@ -106,17 +106,8 @@ spectral/                       # Papers 2 and 3: spectral edge analysis
   scan_full_suite.py              # SCAN versions of all experiments
   paper_figure_*.py               # Multi-panel paper figures
 
-paper/                          # Paper 3 source
-  main.tex                        # LaTeX source
-  arxiv_submission/               # arXiv upload package
-
 scan_data/                      # SCAN train/test splits
-SPECTRAL_GEOMETRY_RESULTS.md    # Detailed Paper 1 results
-SPECTRAL_EDGE_THESIS_REPLICATION.md  # Paper 2 results
-FOURIER_FUNCTIONAL_DYCK_RESULTS.md   # Paper 3 Dyck findings
-FOURIER_FUNCTIONAL_SCAN_RESULTS.md   # Paper 3 SCAN findings
-SPECTRAL_EDGE_FUNCTIONAL_MODES_SYNTHESIS.md  # Cross-paper synthesis
-SPECTRAL_EDGE_THESIS_CONNECTION.md   # Connection to the thesis framework
+SPECTRAL_GEOMETRY_RESULTS.md    # Paper 1 and Paper 2 detailed results
 ```
 
 ## Requirements
