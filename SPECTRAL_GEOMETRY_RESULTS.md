@@ -340,7 +340,66 @@ The key causal element is the **commutator collapse** (alignment of W_Q and W_K 
 
 ---
 
-## 12. Conclusion
+## 12. Gram Matrix Spectral Edge Thesis Replication
+
+### 12.1 Overview
+
+In addition to the per-matrix SVD analysis above (which examines W_Q, W_K individually), we replicate the **spectral edge thesis** (Xu 2026, arXiv:2603.28964) by computing all quantities from the **rolling-window Gram matrix of parameter updates**. All attention weight matrices (W_Q, W_K, W_V, W_O) from **all layers** — including cross-attention in SCAN's decoder — are flattened into a single parameter vector theta_t in R^p, and the Gram matrix of successive update deltas yields three spectral diagnostics.
+
+### 12.2 Method
+
+At each checkpoint t, the update delta delta_t = theta_t - theta_{t-1} is computed over all attention weights flattened. A rolling window X(t) = [delta_{t-W+1}, ..., delta_t]^T in R^{W x p} is formed, and its SVD yields singular values sigma_1 >= ... >= sigma_W. Three quantities are extracted:
+
+- **g_{23} = sigma_2^2 - sigma_3^2** (Gram matrix eigenvalue gap)
+- **k\* = argmax_j (sigma_j/sum sigma_i) x (sigma_j/sigma_{j+1})** (signal-weighted effective rank)
+- **R = sigma_{k\*} / sigma_{k\*+1}** (gap ratio at k*)
+
+Parameter dimensionality: p = 131,072 (Dyck, 2 layers) and p = 2,359,296 (SCAN, 6 layers). Window sizes: W = 3 (Dyck) and W = 5 (SCAN), chosen to ensure sufficient pre-grok deltas given checkpoint intervals.
+
+Two runs with insufficient pre-grok resolution were retrained with denser checkpointing:
+- Dyck s=42 WD=1.0: MODEL_LOG_EVERY=50 (4x denser, saved as `dyck_wd1.0_s42_dense.pt`)
+- SCAN s=2024 WD=1.0: MODEL_LOG_EVERY=100 (5x denser, saved as `scan_wd1.0_s2024_dense.pt`)
+
+### 12.3 Results
+
+**Dyck (W=3)**
+
+| Run | Grok step | g23_early | g23_grok | Decline | Monotonic |
+|-----|-----------|-----------|----------|---------|-----------|
+| s=42 (dense) | 600 | 3.88 | 0.081 | **48.1x** | N |
+| s=137 | 1,400 | 11.3 | 0.240 | **47.2x** | Y |
+| s=2024 | 1,000 | 10.1 | 2.23 | **4.5x** | Y |
+| **Mean** | | | | **33.3x** | 2/3 |
+
+**SCAN (W=5)**
+
+| Run | Grok step | g23_early | g23_grok | Decline | Monotonic |
+|-----|-----------|-----------|----------|---------|-----------|
+| s=42 | 3,000 | 27.7 | 0.555 | **49.9x** | Y |
+| s=137 | 4,000 | 26.6 | 0.858 | **31.0x** | Y |
+| s=2024 (dense) | 3,000 | 8.21 | 0.166 | **49.5x** | N |
+| **Mean** | | | | **43.5x** | 2/3 |
+
+All 6 grokking runs: k*=1, no false positives across 6 controls (WD=0).
+
+### 12.4 Interpretation
+
+The Gram matrix eigenvalue gap g_{23} declines by **33x (Dyck) and 43x (SCAN)** during grokking, indicating the optimization trajectory collapses from a multi-modal to a rank-1 update structure at the moment of generalization. The universal k*=1 confirms the leading update mode dominates throughout, but the *gap* between sub-leading modes undergoes sharp compression at the phase transition.
+
+The gap ratio R shows moderate values (R ~ 2-6) without dramatic spikes, consistent with the thesis's own analysis: at p ~ 10^5-10^6 with W = 3-5, the BBP threshold is not vacuous.
+
+Two of six grokking runs show non-monotonic g_{23} trajectories (the dense checkpoint runs), revealing oscillatory structure during the transition that is smoothed out at sparser intervals.
+
+### 12.5 Relationship to Per-Matrix SVD Analysis
+
+The per-matrix analysis (Sections 4-11) examines the SVD of individual W_Q, W_K matrices and finds that spectral gap opening (sigma_1 >> sigma_2) occurs *after* grokking. The Gram matrix analysis complements this: while the weight matrices themselves don't show pre-grok spectral changes, the **update dynamics** (how the weights are changing) show clear spectral collapse at the grokking transition. This is a stronger signal because it captures the geometric structure of the optimization trajectory rather than the static weight matrices.
+
+**Script:** `spectral/thesis_table7_replication.py`
+**Detailed writeup:** `SPECTRAL_EDGE_THESIS_REPLICATION.md`
+
+---
+
+## 13. Conclusion
 
 The spectral symmetry-breaking conjecture is **supported** on both Dyck and SCAN:
 

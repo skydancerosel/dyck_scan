@@ -3,20 +3,18 @@
 dyck_sweep_results/
 scan_sweep_results/
 
-# LaTeX / paper (lives on arXiv, not in repo)
+# LaTeX auxiliary files (keep .tex)
 *.aux
 *.log
 *.out
-*.tex
-*.pdf
 *.toc
 *.lof
 *.lot
 *.synctex.gz
-
-# arXiv submission artifacts
-arxiv_submission/
-arxiv_submission.zip
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
 
 # OS / IDE
 .DS_Store
@@ -29,3 +27,22 @@ issues_rerun.md
 # Debug / one-off scripts
 debug_*.py
 rerun_*.py
+
+# Lifecycle paper artifacts (too large for git)
+spectral/fourier_dyck_checkpoints/
+spectral/fourier_scan_checkpoints/
+spectral/fourier_dyck_plots/
+spectral/fourier_scan_plots/
+spectral/coherence_edge_plots/
+spectral/coherence_edge_results/
+
+# arXiv submission tarballs (regenerable)
+paper/arxiv_submission/
+paper/arxiv_submission.tar.gz
+paper/arxiv_submission.zip
+paper/main.pdf
+arxiv_submission/
+arxiv_submission*.zip
+arxiv_submission*.tar.gz
+"arxiv_submission 2/"
+"arxiv_submission 2.zip"
